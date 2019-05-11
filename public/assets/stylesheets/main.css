@@ -8,6 +8,7 @@
 
 .profile-wrapper {
 	display: flex;
+	justify-content: space-between;
 
 
 }
@@ -22,15 +23,45 @@
 	grid-template-columns: 1fr 3fr 1fr;
 }
 
-.avatar img{
+.avatar img {
 	vertical-align: middle;
 	height: 2em;
 	width: 2em;
 	border-radius: 50%;
 }
 
+.profile-img img {
+	vertical-align: middle;
+	height: 1.8em;
+	width: 1.8em;
+	border-radius: 50%;
+}
+
+.chat-sender-img img {
+	vertical-align: middle;
+	height: 1.8em;
+	width: 1.8em;
+	border-radius: 50%;
+}
+
+.chat-sender-profile {
+	display: flex;
+}
+
+.sender-options-wrapper {
+	display: flex;
+}
+
+.chat-profile-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
 
 .chat-wrapper {
 	display: grid;
 	grid-template-columns: 1fr 5fr 1fr;
+}
+
+.options-wrapper {
+	display: flex;
 }
