@@ -1,17 +1,17 @@
 import { call, put, takeEvery, all, takeLatest } from "redux-saga/effects";
 import DBServices from "../services/DBServices";
-import { LOAD_MESSAGE, RECIEVE_MESSAGE, SEND_MESSAGE, LOAD_USERS, USERS_FETCHED } from '../constants/constant';
+import { LOAD_MESSAGE, RECIEVE_MESSAGE, SEND_MESSAGE, LOAD_USERS, USERS_FETCHED, MESSAGE_SENT } from '../constants/constant';
 
 
 
 //TODO SEND and RECIEVE MESSAGE
 export function *rootSaga() {
-	// yield all([
-	// 	takeEvery(LOAD_USERS, loadUsers),
-	// 	takeEvery("USER_MESSAGES_FETCH", loadMessage)
-	// ])
+	yield all([
+		takeEvery(LOAD_USERS, loadUsers),
+		takeEvery(SEND_MESSAGE, sendMessage)
+	])
 
-	yield takeLatest(LOAD_USERS, loadUsers);
+	// yield takeLatest(LOAD_USERS, loadUsers);
 }
 
 
@@ -51,13 +51,14 @@ export function* loadMessage(action) {
 export function* sendMessage(action) {
 
       try {
-            yield call(DBServices.getMessages, action.payload);
+		console.log(action.payload)
+            yield call(DBServices.sendMessage, action.payload);
             yield put({
-                  type: SEND_MESSAGE,
-                  layer: action.payload
+                  type: MESSAGE_SENT,
+                  payload: {text: action.payload.message, action: 'sent'}
             });
             // return;
-            action.callbackSuccess();
+            // action.callbackSuccess();
       } catch (e) {
             // eslint-disable-next-line no-console
             console.log(e)
