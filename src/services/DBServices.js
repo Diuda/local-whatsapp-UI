@@ -1,4 +1,5 @@
 import db from '../model/db';
+import { sendMessage } from '../saga/messages';
 
 
 
@@ -21,6 +22,19 @@ const DBService = {
 		})
 		.catch(error => {
 			return error;
+		})
+	},
+
+	sendMessage: (data) => {
+		return db.table('user')
+		.where('id')
+		.equals(data.userid)
+		.modify(user => user.messages.push({text: data.message, action: 'sent'}))
+		.then(updated => {
+			return updated;
+		})
+		.catch(err => {
+			return err;
 		})
 	}
 };
