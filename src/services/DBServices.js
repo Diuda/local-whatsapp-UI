@@ -11,11 +11,6 @@ const DBService = {
 	},
 
 	getUsers: () => {
-
-		
-		// return Promise.resolve("sup");
-		
-		// return db.user.toArray();
 		return db.table('user')
 		.toArray()
 		.then(user => {
