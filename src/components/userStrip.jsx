@@ -1,22 +1,45 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
+import { userChatHistory } from '../actions/index';
+
 
 
 class UserStrip extends React.Component {
+
+	constructor(){
+		super();
+		this.state = {
+			active: false
+		};
+	}
 	
+	openChat = () => {
+		this.setState({
+			active: true
+		});
+
+		const id = this.props.id;
+		this.props.userSelected(id);
+
+	}
 
 	render() {
+
+		const { name, imageURL, latestMessage } = this.props;
+
 		return (
-			<div className='userStrip-Wrapper'>
+			<div className='userStrip-Wrapper' onClick={this.openChat}>
 				<div className='avatar'>
-					<img src='/assets/images/profile1.jpg' alt="user profile avatar"/>
+					<img src={`/assets/images/${imageURL}`} alt="user profile avatar"/>
 				</div>
 				<div className='username-message-wrapper'>
 					<div className='username'>
-						<span>Diuda</span>
+						<span>{name}</span>
 					</div>
 					<div className='latest-msg'>
-						<span>How are you</span>
+						<span>{latestMessage.text}</span>
 					</div>
 				
 				</div>
@@ -34,5 +57,12 @@ class UserStrip extends React.Component {
 }
 
 
+const mapDispatchToProps = dispatch => {
+	return {
+		userSelected: (id) => dispatch(userChatHistory(id))
+	};
+};
 
-export default UserStrip;
+
+
+export default connect(null, mapDispatchToProps)(UserStrip);
