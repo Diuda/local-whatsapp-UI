@@ -15,8 +15,8 @@ export const loadMessages = (data) => ({
 })
 
 
-export const sendMessage = (data) => ({
-	type: SEND_MESSAGE, payload: data
+export const sendMessage = (id, message) => ({
+	type: SEND_MESSAGE, payload: {userid: id, message: message}
 });
 
 
