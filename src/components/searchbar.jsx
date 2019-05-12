@@ -27,7 +27,7 @@ class Searchbar extends React.Component {
 
 				</div>
 				<div className='input-search'>
-					<input type="text" name="search" onChange={this.handleChange}/>
+					<input type='text' name='search' placeholder='Search or start a new chat' autoComplete='off' onChange={this.handleChange}/>
 				</div>
 			</div>
 		)
