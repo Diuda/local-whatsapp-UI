@@ -1,5 +1,6 @@
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 export const MESSAGE_SENT = 'MESSAGE_SENT';
+export const MESSAGE_RECIEVED = 'MESSAGE_RECIEVED';
 export const RECIEVE_MESSAGE = 'RECIEVE_MESSAGE';
 export const LOAD_MESSAGE = 'LOAD_MESSAGE';
 export const LOAD_USERS = 'LOAD_USERS';
