@@ -12,7 +12,7 @@ import ChatHistory from './chatHistory';
 class ChatWindow extends React.Component {
 
 	render() {
-
+ 
 
 		const activeUser = this.props.activeUser;
 		//TODO fallbackUI
