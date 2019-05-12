@@ -8,7 +8,7 @@ class SentChatBubble extends React.Component {
 
 		const { text } = this.props;
 		return(
-			<div className='sent-msg-wrapper tri-right left-top'>
+			<div className='sent-msg-wrapper tri-right right-top'>
 				<div className='sent-msg'>
 					{text}
 				</div>
@@ -19,3 +19,5 @@ class SentChatBubble extends React.Component {
 
 
 export default SentChatBubble;
+
+
