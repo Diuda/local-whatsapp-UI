@@ -8,7 +8,7 @@ class RecieveChatBubble extends React.Component {
 
 		const { text } = this.props;
 		return(
-			<div className='recieve-msg-wrapper tri-right right-top'>
+			<div className='recieve-msg-wrapper tri-right left-top'>
 				<div className='recieve-msg'>
 					{text}
 				</div>
