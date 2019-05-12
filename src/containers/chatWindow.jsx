@@ -5,11 +5,16 @@ import { connect } from 'react-redux';
 import ChatUserBar from '../components/chatUserBar';
 import ChatInput from '../components/chatInput';
 import ChatHistory from './chatHistory';
+import FallbakChatWindow from '../components/fallbackChatWindow';
 
 
 
 
 class ChatWindow extends React.Component {
+
+
+
+
 
 	render() {
  
@@ -23,10 +28,13 @@ class ChatWindow extends React.Component {
 					(
 						<div className='friend-chat-wrapper'>
 							<ChatUserBar name={this.props.users[activeUser-1].name} imageURL={this.props.users[activeUser-1].imageURL} />
-							<ChatHistory messages={this.props.users[activeUser-1].messages} />
+							<ChatHistory  messages={this.props.users[activeUser-1].messages} />
 							<ChatInput />
 						</div>
-					):null
+					):
+					(
+						<FallbakChatWindow />
+					)
 				}
 			</div>
 		)
