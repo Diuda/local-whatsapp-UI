@@ -15,7 +15,7 @@ class ChatHistory extends React.Component {
 			<div className='chat-history-wrapper'>
 				{
 					messages.map(message => (
-						message.type === 'sent' ? 
+						message.action === 'sent' ? 
 						(
 							<SentChatBubble text={message.text} />
 						)
