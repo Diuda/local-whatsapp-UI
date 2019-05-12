@@ -11,8 +11,19 @@ const initialState = {
 export default function chat(state=initialState, { type, payload }) {
 	switch (type) {
 		case MESSAGE_SENT: {
-			state.users[state.activeUser].messages.push(payload) 
-			return { ...state };
+				let newValue = state.users.map(user => {
+					if(user.id === state.activeUser){
+						return {
+							...user,
+							messages: [...user.messages, payload]
+						}
+					}
+					return user;
+				})
+
+				return { ...state, users: newValue };
+
+
 		}
 		case RECIEVE_MESSAGE: return { users: [...state.users, payload] };
 		case LOAD_MESSAGE: return { users: payload };
