@@ -8,6 +8,19 @@ body {
 	height: 100%;
 }
 
+::-webkit-scrollbar-track {
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .4); */
+	background-color:  transparent;
+  }
+  ::-webkit-scrollbar {
+	width: 5px;
+	background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+	background-color: #2C3E50;
+	border-radius: 10px;
+  }
+
 .parent-wrapper {
 	height: 100%;
 	background-color: #d6dad6;
@@ -115,9 +128,22 @@ body {
 }
 
 .chat-history-wrapper {
+	height: calc(100% - 5em - 1em);
+	background: url(/assets/images/background.png);
+	position: absolute;
+	width: 100%;
+	top: 3em;
+	overflow-y: hidden;
+  }
+
+  .message-history-wrapper {
+	bottom: 1em;
+	position: absolute;
+	width: 100%;
+	overflow-x: hidden;
 	height: 100%;
-	background: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
-}
+	overflow-y: auto;
+  }
 
 .tri-right.left-top:after {
 	content: ' ';
@@ -130,39 +156,41 @@ body {
 	bottom: auto;
 	border: 10px solid;
 	border-color: white transparent transparent transparent;
+	
   }
 
   /* TODO Will come back to this later */
   .sent-msg-wrapper {
 	position: relative;
-	width: 70%;
+	width: 100%;
 	height: auto;
-	margin-left: 2em;
+	margin-right: 2em;
 	margin-top: 1em;
+	display: inline-block;
+	right: 2em;
   }
 
   .sent-msg {
+	float: right;
 	display: inline-block;
-	background-color: white;
 	padding: 5px;
+	background-color: #dcf8c6;
 	border-radius: 5px;
   }
 
 
   .recieve-msg-wrapper {
 	position: relative;
-	width: 70%;
+	width: 100%;
 	height: auto;
-	margin-right: 2em;
+	left: 2em;
 	margin-top: 1em;
-	float: right;
   }
 
   .recieve-msg {
-	float: right;
 	display: inline-block;
+	background-color: white;
 	padding: 5px;
-	background-color: #dcf8c6;
 	border-radius: 5px;
   }
 
@@ -177,6 +205,9 @@ body {
 	bottom: auto;
 	border: 10px solid;
 	border-color: #dcf8c6 transparent transparent transparent;
+
+
+	
   }
 
 
@@ -185,6 +216,7 @@ body {
 	border-radius: 20px;
 	border: 1px solid #d6d6d6;
 	height: 2em;
+	padding: 0 1em;
   }
 
   .chat-input-wrapper {
@@ -196,10 +228,14 @@ body {
 	    width: 100%;
 	    border: 1px solid #d6d6d6;
 	    margin: 0em 0.1em;
-	    padding: 0.4em 0em;
+	    padding: 0.4em 1em;
 	    border-radius: 6px;
 	    position: relative;
 	    box-sizing: border-box;
+  }
+
+  input {
+	  outline: none;
   }
 
   .input-search {
@@ -222,3 +258,40 @@ body {
 	text-align: center;
   }
 
+
+
+.fallback-chat-window {
+	height: 100%;
+	background-color: #f8f9fb;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .fallback-content-wrapper {
+	max-width: 356px;
+  }
+
+  .phone-connected-message {
+	text-align: center;
+	font-size: 1.8em;
+	margin-top: 1em;
+  }
+
+
+  .extra-info-message {
+	text-align: center;
+	font-size: 0.9em;
+	margin-top: 1em;
+	color: grey;
+  }
+
+  .username span {
+	font-size: 1em;
+	font-weight: 600;
+  }
+
+  .latest-msg span {
+	font-size: 0.9em;
+	color: #686868;
+  }
