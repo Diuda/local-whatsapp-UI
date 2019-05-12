@@ -17,11 +17,11 @@ class ChatWindow extends React.Component {
 		const activeUser = this.props.activeUser;
 		//TODO fallbackUI
 		return(
-			<div className='friend-chat-wrapper'>
+			<div className='right-side-bar'>
 				{
 					activeUser ?
 					(
-						<div>
+						<div className='friend-chat-wrapper'>
 							<ChatUserBar name={this.props.users[activeUser-1].name} imageURL={this.props.users[activeUser-1].imageURL} />
 							<ChatHistory messages={this.props.users[activeUser-1].messages} />
 							<ChatInput />
