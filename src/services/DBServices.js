@@ -4,13 +4,6 @@ import { sendMessage } from '../saga/messages';
 
 
 const DBService = {
-	getMessages: (username) => {
-		db.table('user').get({name: username}, user => {
-			return user.messages;
-		})
-		
-	},
-
 	getUsers: () => {
 		return db.table('user')
 		.toArray()
@@ -30,6 +23,19 @@ const DBService = {
 		.where('id')
 		.equals(data.userid)
 		.modify(user => user.messages.push({text: data.message, action: 'sent'}))
+		.then(updated => {
+			return updated;
+		})
+		.catch(err => {
+			return err;
+		})
+	},
+
+	recieveMessage: (data) => {
+		return db.table('user')
+		.where('id')
+		.equals(data.userid)
+		.modify(user => user.messages.push({text: data.message, action: 'recieved'}))
 		.then(updated => {
 			return updated;
 		})
