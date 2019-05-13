@@ -9,18 +9,9 @@ import { userChatHistory } from '../actions/index';
 
 class UserStrip extends React.Component {
 
-	constructor(){
-		super();
-		this.state = {
-			active: false
-		};
-	}
+
 	
 	openChat = () => {
-		this.setState({
-			active: true
-		});
-
 		const id = this.props.id;
 		this.props.userSelected(id);
 
