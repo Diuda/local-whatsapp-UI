@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class FallbackChatWindow extends React.Component {
+class FallbackChatWindow extends React.PureComponent {
 
 
 	render() {

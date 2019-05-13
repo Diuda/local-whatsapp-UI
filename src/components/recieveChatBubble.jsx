@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-class RecieveChatBubble extends React.Component {
+class RecieveChatBubble extends React.PureComponent {
 
 
 	render() {

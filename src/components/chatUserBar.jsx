@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faPaperclip, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 
-class ProfileBar extends React.Component {
+class ProfileBar extends React.PureComponent {
 
 
 	render () {

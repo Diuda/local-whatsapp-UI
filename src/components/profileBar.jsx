@@ -5,7 +5,7 @@ import { faCircleNotch ,faEnvelope, faEllipsisV } from '@fortawesome/free-solid-
 
 
 
-class ProfileBar extends React.Component {
+class ProfileBar extends React.PureComponent {
 
 
 	render () {

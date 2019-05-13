@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-class SentChatBubble extends React.Component {
+class SentChatBubble extends React.PureComponent {
 
 
 	render() {
