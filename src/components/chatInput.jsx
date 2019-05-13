@@ -27,12 +27,14 @@ class ChatInput extends React.Component {
 		if(e.which === 13){
 			this.props.sendMessage(this.props.activeUser, e.target.value);
 			e.target.value = '';
+			this.setState({isTyping: false});
 		}
 	}
 
 	handleSendMessageFromButton = (e) => {
 		this.props.sendMessage(this.props.activeUser, this.messageInput.value);
 		this.messageInput.value = '';
+		this.setState({isTyping: false});
 	}
 
 	render() {
