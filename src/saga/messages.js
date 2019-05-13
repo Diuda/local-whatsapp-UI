@@ -1,4 +1,4 @@
-import { call, put, takeEvery, all, takeLatest } from "redux-saga/effects";
+import { call, put, takeEvery, all } from "redux-saga/effects";
 import DBServices from "../services/DBServices";
 import { RECIEVE_MESSAGE, SEND_MESSAGE, LOAD_USERS, USERS_FETCHED, MESSAGE_SENT, MESSAGE_RECIEVED } from '../constants/constant';
 import uuid from 'uuid';
