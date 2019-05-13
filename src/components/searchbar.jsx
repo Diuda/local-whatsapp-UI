@@ -6,17 +6,8 @@ import PropTypes from 'prop-types';
 class Searchbar extends React.Component {
 
 
-	constructor(){
-		super();
-		this.state = {
-			userFilter: ''
-		}
-	}
 
 	handleChange = (e) => {
-		this.setState({
-			userFilter: e.target.value
-		})
 		this.props.onChange(e.target.value);
 	}
 
