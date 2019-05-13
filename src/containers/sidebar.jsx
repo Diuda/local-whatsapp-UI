@@ -31,8 +31,6 @@ class Sidebar extends React.Component {
 
 	componentWillReceiveProps(nextProps) {
 		const users = nextProps.users;
-		console.log(users);
-
 		this.setState({
 			users: users,
 			filteredUsers: users
