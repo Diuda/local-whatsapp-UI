@@ -20,7 +20,6 @@ class ChatHistory extends React.Component {
 	scrollToBottom = () => {
 
 		if(this.messageBottom){
-			console.log(this.messageBottom)
 			const scrollHeight = this.messageBottom.scrollHeight;
 			const height = this.messageBottom.clientHeight;
 			const maxScrollTop = scrollHeight - height;
@@ -40,10 +39,10 @@ class ChatHistory extends React.Component {
 					messages.map(message => (
 						message.action === 'sent' ? 
 						(
-							<SentChatBubble text={message.text} />
+							<SentChatBubble key={message.id} text={message.text} />
 						)
 						:
-						( <RecieveChatBubble text={message.text} /> )
+						( <RecieveChatBubble key={message.id} text={message.text} /> )
 					))
 				}
 				</div>
