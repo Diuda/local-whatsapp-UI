@@ -22,7 +22,7 @@ const DBService = {
 		return db.table('user')
 		.where('id')
 		.equals(data.userid)
-		.modify(user => user.messages.push({text: data.message, action: 'sent'}))
+		.modify(user => user.messages.push({id: data.id, text: data.message, action: data.action}))
 		.then(updated => {
 			return updated;
 		})
@@ -35,7 +35,7 @@ const DBService = {
 		return db.table('user')
 		.where('id')
 		.equals(data.userid)
-		.modify(user => user.messages.push({text: data.message, action: 'recieved'}))
+		.modify(user => user.messages.push({id: data.id, text: data.message, action: data.action}))
 		.then(updated => {
 			return updated;
 		})

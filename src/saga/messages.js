@@ -1,6 +1,7 @@
 import { call, put, takeEvery, all, takeLatest } from "redux-saga/effects";
 import DBServices from "../services/DBServices";
 import { RECIEVE_MESSAGE, SEND_MESSAGE, LOAD_USERS, USERS_FETCHED, MESSAGE_SENT, MESSAGE_RECIEVED } from '../constants/constant';
+import uuid from 'uuid';
 
 
 
@@ -34,10 +35,12 @@ export function* loadUsers() {
 export function* sendMessage(action) {
 
       try {
-            yield call(DBServices.sendMessage, action.payload);
+		const sentMessageID = uuid.v4();
+		const message = {id: sentMessageID, message: action.payload.message, userid: action.payload.userid, action: 'sent'};
+            yield call(DBServices.sendMessage, message);
             yield put({
                   type: MESSAGE_SENT,
-                  payload: {text: action.payload.message, action: 'sent'}
+                  payload: {id: sentMessageID, text: action.payload.message, action: 'sent'}
 		});
 		
 
@@ -56,10 +59,12 @@ export function* recieveMessage(action) {
 
 	
 	try {
-		yield call(DBServices.recieveMessage, action.payload);
+		const receiveMessageID = uuid.v4();
+		const message = {id: receiveMessageID, message: action.payload.message, userid: action.payload.userid, action: 'recieved'};
+		yield call(DBServices.recieveMessage, message);
             yield put({
                   type: MESSAGE_RECIEVED,
-                  payload: {text: action.payload.message, action: 'recieved' }
+                  payload: { id: receiveMessageID, text: action.payload.message, action: 'recieved' }
             });
       } catch (e) {
             // eslint-disable-next-line no-console
