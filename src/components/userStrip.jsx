@@ -20,10 +20,10 @@ class UserStrip extends React.Component {
 	render() {
 
 		//props passed from userlist with each user info
-		const { name, imageURL, latestMessage } = this.props;
+		const { active, name, imageURL, latestMessage } = this.props;
 
 		return (
-			<div className='userStrip-Wrapper' onClick={this.openChat}>
+			<div className={active?'userStrip-Wrapper active-userStrip': 'userStrip-Wrapper'} onClick={this.openChat}>
 				<div className='avatar'>
 					<img src={`/assets/images/${imageURL}`} alt="user profile avatar"/>
 				</div>
