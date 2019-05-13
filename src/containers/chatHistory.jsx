@@ -27,6 +27,7 @@ class ChatHistory extends React.Component {
 	}
 
 	//TODO add timestamp
+	//TODO Bubble can be refactored to be one instead of two
 	render() {
 
 		const { messages } = this.props;
