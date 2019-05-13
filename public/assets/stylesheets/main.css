@@ -295,3 +295,8 @@ body {
 	font-size: 0.9em;
 	color: #686868;
   }
+
+  [data-prefix='fas'] {
+	  cursor: pointer;
+  }
+
