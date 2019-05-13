@@ -17,6 +17,8 @@ class ChatHistory extends React.Component {
 		this.scrollToBottom();
 	}
 
+
+	//handler to scroll to bottom of chat automatically in case of many messages
 	scrollToBottom = () => {
 
 		if(this.messageBottom){

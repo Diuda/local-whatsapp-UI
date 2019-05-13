@@ -4,7 +4,7 @@ import { RECIEVE_MESSAGE, SEND_MESSAGE, LOAD_USERS, USERS_FETCHED, MESSAGE_SENT,
 import uuid from 'uuid';
 
 
-
+// Watcher saga to watch all the actions being done and load corresponding worker saga
 export function *rootSaga() {
 	yield all([
 		takeEvery(LOAD_USERS, loadUsers),
@@ -15,7 +15,7 @@ export function *rootSaga() {
 }
 
 
-
+//saga to load user from IndexedDB through DBservices and dispatch action when users are fetched to be added in redux store from reducer
 export function* loadUsers() {
 
       try {
@@ -32,6 +32,8 @@ export function* loadUsers() {
 }
 
 
+
+//saga to send message to IndexedDB through DBServices and dispatch actions when the message is sent to be added in redux store from reducer
 export function* sendMessage(action) {
 
       try {
@@ -42,8 +44,7 @@ export function* sendMessage(action) {
                   type: MESSAGE_SENT,
                   payload: {id: sentMessageID, text: action.payload.message, action: 'sent'}
 		});
-		
-
+		//manually trigger receive message action with same response on sending message
 		yield put({
 			type: RECIEVE_MESSAGE,
 			payload: action.payload
@@ -55,6 +56,7 @@ export function* sendMessage(action) {
 }
 
 
+//saga to receive message to IndexedDB through DBServices and dispatch actions when the message is sent to be added in redux store from reducer
 export function* recieveMessage(action) {
 
 	

@@ -3,6 +3,8 @@ import db from '../model/db';
 
 
 const DBService = {
+
+	//service to get all the data from table user -> IndexedDB
 	getUsers: () => {
 		return db.table('user')
 		.toArray()
@@ -17,6 +19,10 @@ const DBService = {
 		})
 	},
 
+
+	//TODO send and recieve message might be implemented in one function only
+	
+	//service to push sent message to corresponding user in IndexedDB
 	sendMessage: (data) => {
 		return db.table('user')
 		.where('id')
@@ -30,6 +36,8 @@ const DBService = {
 		})
 	},
 
+
+	//service to push receieved message to corresponding user in IndexedDB
 	recieveMessage: (data) => {
 		return db.table('user')
 		.where('id')

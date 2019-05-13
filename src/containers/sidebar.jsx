@@ -15,7 +15,6 @@ class Sidebar extends React.Component {
 		super(props);
 
 		this.state = {
-			active: false,
 			users: this.props.users,
 			filteredUsers: this.props.users
 		}
@@ -23,12 +22,14 @@ class Sidebar extends React.Component {
 	}
 
 
-
+	//receive all the users on mount
 	componentDidMount() {
 		this.props.fetchUsers();
 
 	}
 
+
+	//updating props if users not recieved from state
 	componentWillReceiveProps(nextProps) {
 		const users = nextProps.users;
 		this.setState({
@@ -38,6 +39,7 @@ class Sidebar extends React.Component {
 	}
 
 
+	//basic search handler using fiter and indexOf
 	filteredUsers = (usersFilter) => {
 		let filteredUsers = this.state.users; 
 

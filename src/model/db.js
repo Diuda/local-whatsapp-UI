@@ -5,11 +5,12 @@ import uuid from 'uuid';
 
 const db = new Dexie('UserData');
 
+//IndexedDB schema
 db.version(1).stores({user: "++id, name, *messages, messages.text, messages.action, messages.id"});
 
 
 
-
+//adding users to IndexedDB on initial load
 // eslint-disable-next-line no-unused-vars
 const addUser = (user) => {
 	db.transaction('rw', db.user, () => {

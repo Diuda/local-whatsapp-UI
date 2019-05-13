@@ -15,9 +15,8 @@ class ChatWindow extends React.Component {
 
 	render() {
  
-
+		//show Fallback UI according to activeUser state
 		const activeUser = this.props.activeUser;
-		//TODO fallbackUI
 		return(
 			<div className='right-side-bar'>
 				{

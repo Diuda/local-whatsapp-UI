@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 class Searchbar extends React.Component {
 
 
-
+	//handler for search input changes. Calls onChange in ../containers/sidebar.jsx
 	handleChange = (e) => {
 		this.props.onChange(e.target.value);
 	}

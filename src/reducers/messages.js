@@ -10,22 +10,27 @@ const initialState = {
 
 export default function chat(state=initialState, { type, payload }) {
 	switch (type) {
+		//add sent message to redux store
 		case MESSAGE_SENT:{
-				let newValue = state.users.map(user => {
-					if(user.id === state.activeUser){
-						return {
-							...user,
-							messages: [...user.messages, payload]
-						}
+			//look for user mapped with message and update users message array
+			let newValue = state.users.map(user => {
+				if(user.id === state.activeUser){
+					return {
+						...user,
+						messages: [...user.messages, payload]
 					}
-					return user;
-				})
+				}
+				return user;
+			})
 
-				return { ...state, users: newValue };
+			return { ...state, users: newValue };
 
 
 		}
+
+		//add receive message to redux store
 		case MESSAGE_RECIEVED:{
+			//look for user mapped with message and update users message array
 			let newValue = state.users.map(user => {
 				if(user.id === state.activeUser){
 					return {
@@ -38,7 +43,11 @@ export default function chat(state=initialState, { type, payload }) {
 
 			return { ...state, users: newValue };
 		}
+
+		//add users to redux store
 		case USERS_FETCHED: return { ...state, users: payload }
+
+		//update currently selected user in redux store
 		case LOAD_CHAT_HISTORY: return {...state, activeUser: payload }
 		default: return state;
 	}

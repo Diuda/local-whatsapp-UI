@@ -6,11 +6,11 @@ import { connect } from 'react-redux';
 import { userChatHistory } from '../actions/index';
 
 
-
+//sidebar user strip component
 class UserStrip extends React.Component {
 
 
-	
+	//dispatch user chat history action
 	openChat = () => {
 		const id = this.props.id;
 		this.props.userSelected(id);
@@ -19,6 +19,7 @@ class UserStrip extends React.Component {
 
 	render() {
 
+		//props passed from userlist with each user info
 		const { name, imageURL, latestMessage } = this.props;
 
 		return (

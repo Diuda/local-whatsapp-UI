@@ -17,15 +17,21 @@ class ChatInput extends React.Component {
 	}
 
 
+	//handler on keyPress of message input
 	handleSendMessage = (e) => {
+
+		//local state to check send icon or voice icon
 		if(e.target.value){
 			this.setState({isTyping: true})
 		}
 		else{
 			this.setState({isTyping: false})
 		}
+
+		//handle message send on enter
 		if(e.which === 13){
 			if(e.target.value){
+				//dispatch send message action
 				this.props.sendMessage(this.props.activeUser, e.target.value);
 				e.target.value = '';
 				this.setState({isTyping: false});
@@ -33,8 +39,10 @@ class ChatInput extends React.Component {
 		}
 	}
 
+	//handler on send message button click
 	handleSendMessageFromButton = (e) => {
 		if(this.messageInput.value){
+			//dispatch send message action
 			this.props.sendMessage(this.props.activeUser, this.messageInput.value);
 			this.messageInput.value = '';
 			this.setState({isTyping: false});
