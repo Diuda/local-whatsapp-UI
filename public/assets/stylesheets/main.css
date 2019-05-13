@@ -114,6 +114,7 @@ body {
 	/* padding: 0.5em; */
 	background-color: #eeeeee;
 	box-sizing: border-box;
+	align-items: center;
 }
 
 .options-wrapper {
@@ -217,6 +218,7 @@ body {
 	border: 1px solid #d6d6d6;
 	height: 2em;
 	padding: 0 1em;
+	box-sizing: border-box;
   }
 
   .chat-input-wrapper {
@@ -298,5 +300,14 @@ body {
 
   [data-prefix='fas'] {
 	  cursor: pointer;
+  }
+
+
+  .emoji-btn, .voice-btn, .send-btn {
+	text-align: center;
+  }
+
+  button {
+	border: none;
   }
 
