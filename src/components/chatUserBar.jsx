@@ -15,7 +15,7 @@ class ProfileBar extends React.Component {
 			<div className='chat-profile-wrapper'>
 				<div className='chat-sender-profile'>
 					<div className='chat-sender-img'>
-						<img src={`/assets/images/${imageURL}`} alt="friend image"/>
+						<img src={`/assets/images/${imageURL}`} alt="friend display"/>
 					</div>
 					<div className='chat-sender-name'>{name}</div>
 				</div>
