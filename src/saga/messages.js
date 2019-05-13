@@ -33,21 +33,6 @@ export function* loadUsers() {
       }
 }
 
-export function* loadMessage(action) {
-
-      try {
-		const response = yield call(DBServices.getMessages, action.payload);
-		const payload = response ? response : {};
-            yield put({
-                  type: LOAD_MESSAGE,
-                  payload
-            });
-            // action.callbackSuccess();
-      } catch (e) {
-            // eslint-disable-next-line no-console
-            console.log(e)
-      }
-}
 
 export function* sendMessage(action) {
 
