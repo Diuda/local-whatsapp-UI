@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
@@ -11,10 +12,6 @@ import FallbakChatWindow from '../components/fallbackChatWindow';
 
 
 class ChatWindow extends React.Component {
-
-
-
-
 
 	render() {
  
@@ -50,5 +47,9 @@ const mapStateToProps = state => {
 }
 
 
-
 export default connect(mapStateToProps, null)(ChatWindow);
+
+ChatWindow.propTypes = {
+	activeUser: PropTypes.number,
+	users: PropTypes.array
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faPaperclip, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
@@ -35,3 +36,8 @@ class ProfileBar extends React.Component {
 }
 
 export default ProfileBar;
+
+ProfileBar.propTypes = {
+	name: PropTypes.string.isRequired,
+	imageURL: PropTypes.string.isRequired
+}

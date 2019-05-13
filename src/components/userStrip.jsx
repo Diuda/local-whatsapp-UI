@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
@@ -66,3 +67,9 @@ const mapDispatchToProps = dispatch => {
 
 
 export default connect(null, mapDispatchToProps)(UserStrip);
+
+UserStrip.propTypes = {
+	name: PropTypes.string.isRequired,
+	imageURL: PropTypes.string.isRequired,
+	latestMessage: PropTypes.object
+}

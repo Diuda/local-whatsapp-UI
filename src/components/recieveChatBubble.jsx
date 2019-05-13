@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 class RecieveChatBubble extends React.Component {
@@ -19,3 +20,7 @@ class RecieveChatBubble extends React.Component {
 
 
 export default RecieveChatBubble;
+
+RecieveChatBubble.propTypes = {
+	text: PropTypes.string.isRequired
+}

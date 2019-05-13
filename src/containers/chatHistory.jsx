@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import SentChatBubble from '../components/sentChatBubble';
 import RecieveChatBubble from '../components/recieveChatBubble';
 
@@ -53,3 +55,10 @@ class ChatHistory extends React.Component {
 
 
 export default ChatHistory;
+
+ChatHistory.propTypes = {
+	message: PropTypes.shape({
+		test: PropTypes.string,
+		action: PropTypes.string
+	})
+}
