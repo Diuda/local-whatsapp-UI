@@ -63,10 +63,17 @@ body {
 	padding: 0.5em;
 	border-bottom: 1px solid #efefef;
 	cursor: pointer;
+	transition: 0.2s;
 }
 
 .userStrip-Wrapper:hover{
 	background-color: #e9ebeb;
+}
+
+.active-userStrip {
+	background-color: #e9ebeb;
+	transition: 0.3s;
+	transform: scale(1.05);
 }
 
 .avatar img {
