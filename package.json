@@ -57,6 +57,8 @@
     "ignore-styles": "^5.0.1",
     "jsdom": "^15.1.0",
     "mocha": "^6.1.4",
-    "react-test-renderer": "^16.8.6"
+    "react-test-renderer": "^16.8.6",
+    "redux-mock-store": "^1.5.3",
+    "redux-test-utils": "^0.3.0"
   }
 }
