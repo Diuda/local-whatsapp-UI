@@ -1,4 +1,4 @@
-import { SEND_MESSAGE, RECIEVE_MESSAGE, LOAD_MESSAGE, USERS_FETCHED, LOAD_CHAT_HISTORY, MESSAGE_SENT, MESSAGE_RECIEVED } from '../constants/constant';
+import { USERS_FETCHED, LOAD_CHAT_HISTORY, MESSAGE_SENT, MESSAGE_RECIEVED } from '../constants/constant';
 
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
 }
 
 
-//TODO hafl the things
+
 export default function chat(state=initialState, { type, payload }) {
 	switch (type) {
 		case MESSAGE_SENT:{
@@ -38,8 +38,8 @@ export default function chat(state=initialState, { type, payload }) {
 
 			return { ...state, users: newValue };
 		}
-		case USERS_FETCHED: return { ...state, users: payload } ;
-		case LOAD_CHAT_HISTORY: return {...state, activeUser: payload };
+		case USERS_FETCHED: return { ...state, users: payload }
+		case LOAD_CHAT_HISTORY: return {...state, activeUser: payload }
 		default: return state;
 	}
 
