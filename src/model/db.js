@@ -1,4 +1,5 @@
 import Dexie from 'dexie';
+// eslint-disable-next-line no-unused-vars
 import uuid from 'uuid';
 
 
@@ -9,6 +10,7 @@ db.version(1).stores({user: "++id, name, *messages, messages.text, messages.acti
 
 
 
+// eslint-disable-next-line no-unused-vars
 const addUser = (user) => {
 	db.transaction('rw', db.user, () => {
 		db.user.add(user);
