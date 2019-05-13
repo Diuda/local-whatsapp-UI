@@ -5,7 +5,7 @@ import * as types from '../../constants/constant';
 
 
 
-describe('Testing Reducers', () => {
+describe('Reducer testing', () => {
 	it('should return initial state', () => {
 		expect(chat(undefined, {})).to.eql({
 			users: [],
